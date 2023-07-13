@@ -52,8 +52,8 @@ def logo_print():
   ⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠈⠻⠿⠿⠛⠿⠿⠟⠁⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂"""
   #logo = logo.replace("⠂","-")
   print(logo)
-  print(u"\n--- " + bcolors.RED + "Devils_Breath" + bcolors.END + " version 1.0 Enumeration Tool ---")
-  print("--- Omajan 2023 ---\n")
+  print(u"\n---( " + bcolors.RED + "Devils_Breath" + bcolors.END + " version 1.0 Enumeration Tool )---")
+  print("---( Omajan 2023 )---\n")
 
 def clear():
   os.system('cls' if os.name == 'nt' else 'clear')

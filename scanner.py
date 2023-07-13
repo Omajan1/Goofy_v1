@@ -15,6 +15,7 @@ class bcolors:
 class scanner():
     scanner = None
     scanning_dict = {}
+    common_services = ["ssh", "ftp", "telnet", "smtp", "domain name system", "http", "https", "pop3", "imap", "imaps", "mysql", "http-proxy"]
 
     def __init__(self, ip, output_file):
         self.scanner = nmap.PortScanner()
@@ -34,10 +35,38 @@ class scanner():
 
         print(bcolors.OKBLUE + "[+]" + bcolors.END + " These ports were open with these services \n")
 
-        print("\t" + bcolors.OKBLUE + "Port" + bcolors.END + " \t\t" + bcolors.OKBLUE + "Service" + bcolors.END)
+        print("\t" + bcolors.OKBLUE + "Port" + bcolors.END + " \t\t" + bcolors.OKBLUE + "Service" + bcolors.END + " \t\t" + bcolors.OKBLUE + "Note" + bcolors.END)
 
         for port in self.scanner[self.ip]["tcp"].keys():
-            print("\t" + str(port) + " \t|\t" + self.scanner[self.ip]["tcp"][port]["name"])
+            Note = ""
+            if (self.scanner[self.ip]["tcp"][port]["name"] in self.common_services):
+                match (self.scanner[self.ip]["tcp"][port]["name"]):
+                    case "ssh":
+                        Note = "Need creds first"
+                    case "ftp":
+                        Note = "Most likely files on the system"
+                    case "telnet":
+                        Note = "Rare, but worse ssh"
+                    case "smtp":
+                        Note = "Mail"
+                    case "domain name system":
+                        Note = "DNS"
+                    case "http":
+                        Note = "Webserver"
+                    case "https":
+                        Note = "Webserver but encrypted traffic"
+                    case "pop3":
+                        Note = "Mail"
+                    case "imap":
+                        Note = "Mail"
+                    case "imaps":
+                        Note = "Mail"
+                    case "mysql":
+                        Note = "Database"
+                    case "http-proxy":
+                        Note = "Webserver"
+
+            print("\t" + str(port) + " \t|\t" + self.scanner[self.ip]["tcp"][port]["name"] + " \t|\t" + Note)
 
     def map_scan(self):
         pass
