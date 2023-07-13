@@ -91,6 +91,9 @@ def menu():
         start_scan()
       case "start":
         no_option_chosen = False
+
+        print("\n" + bcolors.OKBLUE + "[+]" + bcolors.END + " Starting Scan...")
+
         start_scan()
 
       case "exit":
