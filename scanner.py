@@ -16,15 +16,16 @@ class scanner():
     scanner = None
     scanning_dict = {}
 
-    def __init__(self, ip):
+    def __init__(self, ip, output_file):
         self.scanner = nmap.PortScanner()
         self.ip = ip
+        self.output_file = output_file
 
     def start_scan(self):
         self.start_nmap()
 
     def start_nmap(self):
-        self.scanner.scan(self.ip, "1-65535", "-A -T4")
+        self.scanner.scan(self.ip, "1-65535", "-A -T4 -oN ")
         try:
             print(bcolors.OKBLUE + "[+]" + bcolors.END + " IP " + str(self.ip) + " is " + self.scanner[self.ip].state())
         except:

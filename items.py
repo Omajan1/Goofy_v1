@@ -35,7 +35,7 @@ def logo_print():
   ⠂⠂⣟⣿⣟⣟⣿⣿⣟⢿⣫⣾⣫⡮⡮⣫⣫⣿⣿⣫⣿⣿⣫⣫⡮⡮⣫⣷⣝⡿⣟⣿⣿⣟⣟⣿⣟⠂⠂
   ⠂⠂⠸⣫⡧⣫⣿⣭⣷⣿⣟⣫⡮⡮⡮⣫⣫⣫⣫⣫⣫⣫⣫⣫⡮⡮⡮⣫⣟⣿⣾⣭⣿⣫⢾⣫⠏⠂⠂
   ⠂⠂⠂⢻⣿⣟⣿⣟⣿⡿⣫⣫⡮⡮⡮⡿⡮⣯⣟⣿⣟⣽⡮⢿⡮⡮⡮⣫⣟⢿⣿⣟⣿⣟⣿⡟⠂⠂⠂
-  ⠂⠂⠂⢸⣟⣟⣟⣫⣟⣧⡈  """ + bcolors.RED + "O" + bcolors.END + """ ⠊⢫⣟⣟⡮⣟⣟⡝⠑ """ + bcolors.RED + "O" + bcolors.END + """  ⢁⣼⣫⣫⣟⣟⣟⣧⠂⠂⠂
+  ⠂⠂⠂⢸⣟⣟⣟⣫⣟⣧⡈     ⠊⢫⣟⣟⡮⣟⣟⡝⠑      ⢁⣼⣫⣫⣟⣟⣟⣧⠂⠂⠂
   ⠂⠂⠂⢸⣫⣟⣟⡮⡮⣷⣗⠦⣀⣀⣀⣀⣾⣟⣫⡮⣫⣟⣷⣀⣀⣀⣀⠴⣾⣾⡮⡮⣟⣟⣫⡇⠂⠂⠂
   ⠂⠂⠂⠂⢿⣟⣟⣟⠿⡮⡮⡮⣶⡮⡮⡮⣷⣫⡮⡮⡮⣫⣾⣷⡮⡮⣶⡮⡮⡮⠿⣫⣟⣟⡿⠂⠂⠂⠂
   ⠂⠂⠂⠂⠘⢿⡿⢻⣷⣮⣽⣛⡮⣽⣫⠿⡿⢾⡮⡮⡮⡷⢿⠿⣫⣯⡮⣛⣯⣵⣾⡟⢿⡿⠃⠂⠂⠂⠂
@@ -99,7 +99,7 @@ def menu():
 def start_scan():
   with open("info.json", "r") as outfile:
     json_obj = json.load(outfile)
-    scanner_obj = scanner.scanner(json_obj["target_ip"])
+    scanner_obj = scanner.scanner(json_obj["target_ip"], json_obj["out_file"])
     scanner_obj.start_scan()
 
 def update_json(key, value):
