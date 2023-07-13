@@ -66,7 +66,7 @@ class scanner():
                     case "http-proxy":
                         Note = "Webserver"
 
-            print("\t" + str(port) + " \t|\t" + self.scanner[self.ip]["tcp"][port]["name"] + " \t|\t" + Note)
+            print("\t" + str(port) + " \t|\t" + self.scanner[self.ip]["tcp"][port]["name"] + " \t\t|\t" + Note)
 
     def map_scan(self):
         pass
