@@ -33,7 +33,7 @@ class scanner():
 
         print(bcolors.OKBLUE + "[+]" + bcolors.END + " These ports were open with these services \n")
 
-        print("\t" + bcolors.OKBLUE + "Port" + bcolors.END + " \t\t" + + bcolors.OKBLUE + "Service" + bcolors.END)
+        print("\t" + bcolors.OKBLUE + "Port" + bcolors.END + " \t\t" + bcolors.OKBLUE + "Service" + bcolors.END)
 
         for port in self.scanner[self.ip]["tcp"].keys():
             print("\t" + str(port) + " \t|\t" + self.scanner[self.ip]["tcp"][port]["name"])
