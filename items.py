@@ -50,7 +50,7 @@ def logo_print():
   ⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⢸⣟⣟⣯⣾⡮⡮⡮⡮⡮⣷⣽⣟⣟⡇⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂
   ⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠈⠛⠿⣟⣫⡮⡮⡮⡮⡮⣫⣟⠿⠛⠁⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂
   ⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠈⠻⠿⠿⠛⠿⠿⠟⠁⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂⠂"""
-  logo = logo.replace("⠂","-")
+  #logo = logo.replace("⠂","-")
   print(logo)
   print(u"\n--- " + bcolors.RED + "Devils_Breath" + bcolors.END + " version 1.0 Enumeration Tool ---")
   print("--- Omajan 2023 ---\n")
