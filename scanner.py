@@ -25,7 +25,7 @@ class scanner():
         self.start_nmap()
 
     def start_nmap(self):
-        self.scanner.scan(self.ip, "1-65535", "-A -T4 -oN ")
+        self.scanner.scan(self.ip, "1-65535", "-A -T4 -oN " + self.output_file)
         try:
             print(bcolors.OKBLUE + "[+]" + bcolors.END + " IP " + str(self.ip) + " is " + self.scanner[self.ip].state())
         except:
