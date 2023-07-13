@@ -38,6 +38,8 @@ class scanner():
         print("\t" + bcolors.OKBLUE + "Port" + bcolors.END + " \t\t" + bcolors.OKBLUE + "Service" + bcolors.END + " \t\t" + bcolors.OKBLUE + "Note" + bcolors.END)
 
         for port in self.scanner[self.ip]["tcp"].keys():
+            
+            # Notes
             Note = ""
             if (self.scanner[self.ip]["tcp"][port]["name"] in self.common_services):
                 match (self.scanner[self.ip]["tcp"][port]["name"]):
@@ -66,11 +68,13 @@ class scanner():
                     case "http-proxy":
                         Note = "Webserver"
 
+            #tabspace
             if len(self.scanner[self.ip]["tcp"][port]["name"]) > 8:
                 tabspace = " \t|\t"
             else:
                 tabspace = " \t\t|\t"
 
+            #print result
             print("\t" + str(port) + " \t|\t" + self.scanner[self.ip]["tcp"][port]["name"] + tabspace + Note)
 
     def map_scan(self):
