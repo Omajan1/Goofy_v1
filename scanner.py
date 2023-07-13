@@ -24,15 +24,17 @@ class scanner():
         self.start_nmap()
 
     def start_nmap(self):
-        scanning_dict = self.scanner.scan(self.ip, "1-65535", "-A -T4")
+        self.scanner.scan(self.ip, "1-65535", "-A -T4")
         try:
             print(bcolors.OKBLUE + "[+]" + bcolors.END + " IP " + str(self.ip) + " is " + self.scanner[self.ip].state())
         except:
             print(bcolors.FAIL + "[-]" + bcolors.END + " Seems that the host is not responding to ping, trying with -Pn option...")
-            scanning_dict = self.scanner.scan(self.ip, "1-65535", "-A -T4")
+            self.scanner.scan(self.ip, "1-65535", "-A -T4")
+
+        print(bcolors.OKBLUE + "[+]" + bcolors.END + " These ports were open with these services \n")
 
         for port in self.scanner[self.ip]["tcp"].keys():
-            print(str(port) + " has service " + self.scanner[self.ip]["tcp"][port]["name"])
+            print("\t" + str(port) + " \thas service \t" + self.scanner[self.ip]["tcp"][port]["name"])
 
     def map_scan(self):
         pass
