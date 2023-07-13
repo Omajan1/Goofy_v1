@@ -31,7 +31,8 @@ class scanner():
             print(bcolors.FAIL + "[-]" + bcolors.END + " Seems that the host is not responding to ping, trying with -Pn option...")
             scanning_dict = self.scanner.scan(self.ip, "1-65535", "-A -T4")
 
-        print(scanning_dict)
+        print(self.scanner[self.ip].all_protocols)
+        print(self.scanner[self.ip]["tcp"].keys())
 
     def map_scan(self):
         pass
