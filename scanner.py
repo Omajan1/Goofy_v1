@@ -25,9 +25,9 @@ class scanner():
 
     def start_nmap(self):
         scanning_dict = self.scanner.scan(self.ip, "1-65535", "-A -T4")
-        print("[+] IP " + str(self.ip) + " is " + self.scanner[self.ip].state())
-
-        if (self.scanner[self.ip].state() == "down"):
+        try:
+            print("[+] IP " + str(self.ip) + " is " + self.scanner[self.ip].state())
+        except:
             print(bcolors.FAIL + "[-]" + bcolors.END + " Seems that the host is not responding to ping, trying with -Pn option...")
             scanning_dict = self.scanner.scan(self.ip, "1-65535", "-A -T4")
 
