@@ -32,11 +32,7 @@ class scanner():
             scanning_dict = self.scanner.scan(self.ip, "1-65535", "-A -T4")
 
         for port in self.scanner[self.ip]["tcp"].keys():
-            print(port)
-        # open_ports_list = print(self.scanner[self.ip]["tcp"].keys())
-
-        # for port in open_ports_list:
-        #     print(str(port) + " has service " + self.scanner[self.ip]["tcp"][port]["name"])
+            print(str(port) + " has service " + self.scanner[self.ip]["tcp"][port]["name"])
 
     def map_scan(self):
         pass
