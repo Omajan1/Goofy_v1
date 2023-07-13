@@ -31,7 +31,8 @@ class scanner():
             print(bcolors.FAIL + "[-]" + bcolors.END + " Seems that the host is not responding to ping, trying with -Pn option...")
             scanning_dict = self.scanner.scan(self.ip, "1-65535", "-A -T4")
 
-        print(self.scanner[self.ip]["tcp"].keys())
+        for port in self.scanner[self.ip]["tcp"].keys():
+            print(port)
         # open_ports_list = print(self.scanner[self.ip]["tcp"].keys())
 
         # for port in open_ports_list:
